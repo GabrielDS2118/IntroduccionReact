@@ -1,0 +1,47 @@
+PRIMEROS PASOS CON REACT
+
+   1.Qué es React?
+    
+    React es una herramienta de JavaScript en el front end que nos ayuda a construir la parte visual de nuestras aplicaciones web, 
+    las interfaces con las que van a interactuar nuestros usuarios.
+    React es una librería progresiva, esto porque puedes hacer desde una página sencilla 
+    hasta poder desarrollar aplicaciones gigantes, y llegar a convertirse en un framework en conjunto de muchas herramientas que existen a su alrededor. 
+
+    2.Cuándo usar React.js
+
+        ¿Qué es un MVP?
+            MVP (Minimum Viable Product - Producto Mínimo Viable): 
+            Se refiere a construir funcionalidades pequeñas que sean completas 
+            para que podamos lanzarla y medir su impacto y decidir si seguir ese camino o probar otra cosa.
+    
+        Análisis: componentes y comportamientos
+
+            Componentes: 
+                Son la forma de estructurar las piezas de nuestra página web para hacerlas escalables, nos ahorran tiempo y esfuerzo.
+                Son abstracciones de los elementos de nuestra página web para ser reusados las veces que necesitemos.
+                Los componentes pueden trabajar de manera independiente a los demás, 
+                pero con React todos los componentes tienen una conexión con el resto de componentes, 
+                para que en conjunto puedan reaccionar al comportamiento de los usuarios.
+
+                Ejemplo: Lista de TODO
+
+            Comportamiento: 
+                Cómo actúan nuestros componentes con las interacciones de los usuarios.
+                Ejemplo: Agreagar un TODO
+
+    
+    3.Instalacion con Create React App
+
+        React es multiplataforma,lo podemos usar para desarrollar en mobile y en web
+        Cuando trabajamos en web usamos react-dom
+
+        Crear proyecto:
+        
+            Introduccion/ -> npx create-react-app ps-todo-app
+                De esta manera creamos un proyecto de react rapidamente sin necesidad de hacer
+                configuraciones
+
+            Iniciar proyecto:
+                cd ps-todo-app
+                npm start
+            
