@@ -17,9 +17,13 @@ PRIMEROS PASOS CON REACT
         Análisis: componentes y comportamientos
 
             Componentes: 
-                Son la forma de estructurar las piezas de nuestra página web para hacerlas escalables, nos ahorran tiempo y esfuerzo.
-                Son abstracciones de los elementos de nuestra página web para ser reusados las veces que necesitemos.
-                Los componentes pueden trabajar de manera independiente a los demás, 
+                - Un componente es una pieza de código que describe una parte reutilizable de la interfaz.
+
+                -Son la forma de estructurar las piezas de nuestra página web para hacerlas escalables, nos ahorran tiempo y esfuerzo.
+
+                -Son abstracciones de los elementos de nuestra página web para ser reusados las veces que necesitemos.
+
+                -Los componentes pueden trabajar de manera independiente a los demás, 
                 pero con React todos los componentes tienen una conexión con el resto de componentes, 
                 para que en conjunto puedan reaccionar al comportamiento de los usuarios.
 
@@ -44,4 +48,38 @@ PRIMEROS PASOS CON REACT
             Iniciar proyecto:
                 cd ps-todo-app
                 npm start
+
+FUNDAMENTOS DE REACT: MAQUETACION
+
+    5. JSX: componentes vs. elementos (y props vs. atributos)
+
+        Componentes vs. elementos
+            Componente:
+
+                const Component = () => {
+                    const titulo = Soy un título;
+        
+                    return( <h1>{titulo}h1>)
+                }
             
+            Elemento: Lo que retorna un componente
+                <h1>Soy un títuloh1>
+        
+        Propiedades vs. Atributos
+
+            Atributo
+                Los atributos los pueden tener las etiquetas de HTML.
+                <h1 class="titulo">Soy un títuloh1>
+            
+            Propiedades:
+                Parámetros que reciben los componentes
+
+                <Componente saludo = "Hola"></Componente>
+                const Componente = (props) => {
+                    return(
+                        <h1> Saludo </h1>
+                    )
+                }
+        
+
+    
