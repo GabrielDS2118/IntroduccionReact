@@ -4,9 +4,13 @@ import { data } from '../todosData';
 export const appSlice = createSlice({
   name: 'AppData',
   initialState: {
-    info: data,
-    counter: data.length,
-    completed: data.filter((todo) => todo.completed).length,
+    info: localStorage.getItem('DATA')
+      ? JSON.parse(localStorage.getItem('DATA'))
+      : localStorage.setItem('DATA', JSON.stringify(data)),
+    counter: JSON.parse(localStorage.getItem('DATA')).length,
+    completed: JSON.parse(localStorage.getItem('DATA')).filter(
+      (todo) => todo.completed
+    ).length,
   },
 
   reducers: {
@@ -21,11 +25,17 @@ export const appSlice = createSlice({
       state.counter = state.counter - 1;
       state.completed =
         state.completed > 1 ? state.completed - 1 : state.completed;
+
+      //   localStorage.removeItem('DATA');
+      //   localStorage.setItem('DATA', JSON.stringify(state.info));
     },
 
     addTodo: (state, action) => {
       state.info = [action.payload, ...state.info];
       state.counter = state.counter + 1;
+
+      //   localStorage.removeItem('DATA');
+      //   localStorage.setItem('DATA', JSON.stringify(state.info));
     },
 
     setCompleted: (state, action) => {

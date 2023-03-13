@@ -10,8 +10,6 @@ import { data } from './todosData';
 import './App.css';
 
 function App() {
-  localStorage.setItem('data', data);
-
   // let counter = 0;
   // data.map((todo) => (todo.completed ? (counter += 1) : ''));
   // const totalTodos = data.length;
