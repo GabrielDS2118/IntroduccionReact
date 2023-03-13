@@ -1,18 +1,19 @@
 import {
   TodoCounter,
-  // TodoItem,
   TodoSearch,
   CreateTodoButton,
 } from './components/exports';
-// import TodoList from './containers/TodoList.jsx';
 
-import { data } from './todosData';
+// import { data } from './todosData';
 import './App.css';
+import { useLocalStorage } from './hooks/useLocalStorage';
+
+import { setInfo } from './redux/appSlice.js';
+import { useDispatch } from 'react-redux';
 
 function App() {
-  // let counter = 0;
-  // data.map((todo) => (todo.completed ? (counter += 1) : ''));
-  // const totalTodos = data.length;
+  const dispatch = useDispatch();
+  dispatch(setInfo(useLocalStorage('DATA', [])));
 
   return (
     <div className="container">
@@ -22,15 +23,6 @@ function App() {
       <div className="container-info">
         <TodoCounter />
         <TodoSearch />
-        {/* <TodoList>
-          {data.map((todo) => (
-            <TodoItem
-              key={todo.text}
-              text={todo.text}
-              completed={todo.completed}
-            />
-          ))}
-        </TodoList> */}
         <CreateTodoButton />
       </div>
     </div>

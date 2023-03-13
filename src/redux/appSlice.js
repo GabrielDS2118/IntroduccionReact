@@ -1,16 +1,15 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { data } from '../todosData';
+// import { data } from '../todosData';
+// import { useLocalStorage } from '../hooks/useLocalStorage';
+
+const baseData = JSON.parse(localStorage.getItem('DATA'));
 
 export const appSlice = createSlice({
   name: 'AppData',
   initialState: {
-    info: localStorage.getItem('DATA')
-      ? JSON.parse(localStorage.getItem('DATA'))
-      : localStorage.setItem('DATA', JSON.stringify(data)),
-    counter: JSON.parse(localStorage.getItem('DATA')).length,
-    completed: JSON.parse(localStorage.getItem('DATA')).filter(
-      (todo) => todo.completed
-    ).length,
+    info: [],
+    counter: baseData.length,
+    completed: baseData.filter((todo) => todo.completed).length,
   },
 
   reducers: {
@@ -25,17 +24,11 @@ export const appSlice = createSlice({
       state.counter = state.counter - 1;
       state.completed =
         state.completed > 1 ? state.completed - 1 : state.completed;
-
-      //   localStorage.removeItem('DATA');
-      //   localStorage.setItem('DATA', JSON.stringify(state.info));
     },
 
     addTodo: (state, action) => {
       state.info = [action.payload, ...state.info];
       state.counter = state.counter + 1;
-
-      //   localStorage.removeItem('DATA');
-      //   localStorage.setItem('DATA', JSON.stringify(state.info));
     },
 
     setCompleted: (state, action) => {
@@ -50,8 +43,23 @@ export const appSlice = createSlice({
 
       console.log(state.info);
     },
+
+    setCounter: (state, action) => {
+      state.counter = action.payload;
+    },
+
+    setBaseCompleted: (state, action) => {
+      state.completed = action.payload;
+    },
   },
 });
 
-export const { setInfo, removeTodo, addTodo, setCompleted } = appSlice.actions;
+export const {
+  setInfo,
+  removeTodo,
+  addTodo,
+  setCompleted,
+  setCounter,
+  setBaseCompleted,
+} = appSlice.actions;
 export default appSlice.reducer;

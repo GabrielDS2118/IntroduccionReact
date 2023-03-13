@@ -80,6 +80,12 @@ FUNDAMENTOS DE REACT: MAQUETACION
                         <h1> Saludo </h1>
                     )
                 }
+
+
+Local Storage:
+    Nos permite persistir información al recargarse la página
+    Recibe solo strings
+        JSON.stringify() -> convertir a texto
+        JSON.parse() -> convertir a js
         
-    
     
