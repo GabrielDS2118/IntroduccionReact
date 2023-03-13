@@ -1,18 +1,18 @@
 import {
   TodoCounter,
-  TodoItem,
+  // TodoItem,
   TodoSearch,
   CreateTodoButton,
 } from './components/exports';
-import TodoList from './containers/TodoList.jsx';
+// import TodoList from './containers/TodoList.jsx';
 
-import { data } from './todosData';
+// import { data } from './todosData';
 import './App.css';
 
 function App() {
-  let counter = 0;
-  data.map((todo) => (todo.completed ? (counter += 1) : ''));
-  const totalTodos = data.length;
+  // let counter = 0;
+  // data.map((todo) => (todo.completed ? (counter += 1) : ''));
+  // const totalTodos = data.length;
 
   return (
     <div className="container">
@@ -20,9 +20,9 @@ function App() {
         <img src="./assets/principal.png" alt="img"></img>
       </div>
       <div className="container-info">
-        <TodoCounter completed={counter} total={totalTodos} />
+        <TodoCounter />
         <TodoSearch />
-        <TodoList>
+        {/* <TodoList>
           {data.map((todo) => (
             <TodoItem
               key={todo.text}
@@ -30,7 +30,7 @@ function App() {
               completed={todo.completed}
             />
           ))}
-        </TodoList>
+        </TodoList> */}
         <CreateTodoButton />
       </div>
     </div>

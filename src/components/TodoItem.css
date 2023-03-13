@@ -38,6 +38,9 @@
 .Icon-check--active {
   color: #4caf50;
 }
+.Icon-check--incompleted {
+  color: red;
+}
 
 .Icon-delete {
   position: absolute;
