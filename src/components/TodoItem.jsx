@@ -7,10 +7,10 @@ function TodoItem({ idx, completed, text }) {
   const dispatch = useDispatch();
   const [isCompleted, setIsCompleted] = useState(completed);
 
-  const onCompleted = () => {
+  const onCompleted = (idx) => {
     setIsCompleted(!isCompleted);
 
-    dispatch(setCompleted(!isCompleted));
+    dispatch(setCompleted({ isCompleted: !isCompleted, id: idx }));
   };
 
   const onDeleted = () => {
@@ -23,7 +23,7 @@ function TodoItem({ idx, completed, text }) {
         className={`Icon Icon-check ${
           isCompleted ? 'Icon-check--active' : 'Icon-check--incompleted'
         }`}
-        onClick={onCompleted}
+        onClick={() => onCompleted(idx)}
       >
         {isCompleted ? '√' : 'X'}
       </span>

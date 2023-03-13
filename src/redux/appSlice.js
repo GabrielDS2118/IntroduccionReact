@@ -30,7 +30,15 @@ export const appSlice = createSlice({
 
     setCompleted: (state, action) => {
       console.log(action.payload);
-      action.payload ? (state.completed += 1) : (state.completed -= 1);
+      const { isCompleted, id } = action.payload;
+      isCompleted ? (state.completed += 1) : (state.completed -= 1);
+
+      const idxTodo = state.info.findIndex((todo) => todo.id === id);
+
+      const todoUpdated = { ...state.info[idxTodo], completed: true };
+      state.info[idxTodo] = todoUpdated;
+
+      console.log(state.info);
     },
   },
 });

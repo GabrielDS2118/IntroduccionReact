@@ -6,10 +6,12 @@ import {
 } from './components/exports';
 // import TodoList from './containers/TodoList.jsx';
 
-// import { data } from './todosData';
+import { data } from './todosData';
 import './App.css';
 
 function App() {
+  localStorage.setItem('data', data);
+
   // let counter = 0;
   // data.map((todo) => (todo.completed ? (counter += 1) : ''));
   // const totalTodos = data.length;

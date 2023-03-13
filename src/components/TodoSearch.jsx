@@ -9,6 +9,7 @@ import TodoList from '../containers/TodoList';
 
 function TodoSearch() {
   const { info } = useSelector((state) => state.appSlice);
+  console.log(info);
   const [information, setInformation] = useState(info);
   console.log(info);
   const [query, setQuery] = useState('');
