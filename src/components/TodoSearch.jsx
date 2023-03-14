@@ -9,9 +9,7 @@ import TodoList from '../containers/TodoList';
 
 function TodoSearch() {
   const { info } = useSelector((state) => state.appSlice);
-  console.log(info);
   const [information, setInformation] = useState(info);
-  console.log(info);
   const [query, setQuery] = useState('');
 
   const onChangeQuery = (e) => {
@@ -27,7 +25,7 @@ function TodoSearch() {
     const newData = information.filter((todo) =>
       todo.text.toLowerCase().includes(query)
     );
-    console.log(newData);
+
     setInformation(newData);
     // dispatch(setInfo(newData));
   }, [query, info, information]);

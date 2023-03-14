@@ -4,7 +4,7 @@ import './TodoList.css';
 function TodoList({ children }) {
   return (
     <section>
-      <ul>{children}</ul>
+      {children.length > 0 ? <ul>{children}</ul> : <p>Crea tu primer todo</p>}
     </section>
   );
 }

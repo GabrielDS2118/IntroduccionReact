@@ -1,9 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './TodoCounter.css';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { setCounter, setBaseCompleted } from '../redux/appSlice.js';
 
 function TodoCounter() {
-  const { counter, completed } = useSelector((state) => state.appSlice);
+  const dispatch = useDispatch();
+  const { counter, completed, info } = useSelector((state) => state.appSlice);
+
+  // useEffect(() => {
+  //   console.log('Holaa');
+  // }, []);
+
+  useEffect(() => {
+    dispatch(setCounter(info.length));
+    dispatch(setBaseCompleted(info.filter((todo) => todo.completed).length));
+  }, [info]);
 
   return (
     <h2 className="TodoCounter">

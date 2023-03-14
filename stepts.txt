@@ -87,5 +87,20 @@ Local Storage:
     Recibe solo strings
         JSON.stringify() -> convertir a texto
         JSON.parse() -> convertir a js
-        
+
+
+useEffect:
+
+    Diferentes maneras de actualizar nuestros componentes
+    Existen tres diferentes maneras para aplicar el hook de efecto, todas funcionan diferente a la hora de re-renderizar nuestros componentes.
+
+    Sin pasar un arreglo como segundo argumento: useEffect(funcion)
+    Cuando no le pasamos un segundo argumento con las condiciones de cuándo se debe re-ejecutar nuestra función, React tomará como condiciones que se debe ejecutar nuestra función todas las veces que ocurra un re-renderizado, y también cada vez que se actualice alguna prop (Si es que el componente recibe alguna).
+
+    Pasando un arreglo vacío: useEffect(funcion, [])
+    Cuando pasamos un arreglo vacío, le estás diciendo a React que no hay ninguna condición para volver a ejecutar el código de nuestra función, entonces solamente se ejecutará en el renderizado inicial.
+
+    Pasando un arreglo con datos: useEffect(funcion, [val1, val2, valN])
+    Cuando especificas las condiciones dentro del arreglo del segundo parámetro, le estás diciendo a React que ejecute nuestra función en el renderizado inicial y también cuando algún dato del arreglo cambie.
+            
     
