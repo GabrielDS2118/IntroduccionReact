@@ -34,11 +34,17 @@ export const appSlice = createSlice({
     },
 
     addTodo: (state, action) => {
-      state.info = [action.payload, ...state.info];
+      const newTodo = {
+        id: state.counter + 1,
+        text: action.payload,
+        completed: false,
+      };
+      state.info = [newTodo, ...state.info];
       state.counter = state.counter + 1;
     },
 
     setCompleted: (state, action) => {
+      console.log('Hola');
       const { isCompleted, id } = action.payload;
 
       isCompleted ? (state.completed += 1) : (state.completed -= 1);
@@ -66,5 +72,6 @@ export const {
   setCompleted,
   setCounter,
   setBaseCompleted,
+  setOpen,
 } = appSlice.actions;
 export default appSlice.reducer;

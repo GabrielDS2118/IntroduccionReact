@@ -118,3 +118,16 @@ React Context
     
     useContext
         Tiene la misma funcionalidad que el consumer de nuestro contexto, pero useContext también tiene una manera más sencilla de utilizar y una sintaxis mucho más clara.
+
+
+Portales
+    Los portales nos permiten teletransportar componentes a otro nodo de HTML, y seguir comunicándose con otros componentes como si estuviera en el mismo nodo.
+
+    Se emplean en ocasiones donde los estilos CSS restringen los elementos. Por ejemplo, problemas de apilamiento z-index y desbordamiento overflow.
+
+    ¿Para qué podemos usarlos?
+
+        Modales
+        Tooltips
+        Menús flotantes
+        Widgets
